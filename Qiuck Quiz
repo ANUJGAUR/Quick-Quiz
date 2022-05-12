@@ -1,0 +1,176 @@
+#include<iostream>
+#include<conio.h>
+#include<fstream>
+#include<string.h>
+using  namespace std;
+int menu();
+class Controller
+{
+    public:
+    void menuController();
+};
+void Controller::menuController()
+{
+	char name[20];
+	char pwd[20];
+	char cfm;
+	cout<<" Administer Login "<<endl;
+	cout<<" ============================== "<<endl;
+	cout<<" Enter Name : ";
+	cin>>name;
+	cout<<" Enter password : ";
+	cin>>pwd;
+	cout<<" Confirm(y/n) : ";
+	cin>>cfm;
+	if((cfm)=='y')
+	{
+		system("cls");
+			int q;
+			int scre=0;
+			int score;
+			int answer[10];
+			int ans[10];
+			cout<<"Manage Question"<<endl;
+			cout<<"==============="<<endl;
+			cout<<"1) Print Qustion"<<endl;
+			cout<<"2) correct answer"<<endl;
+			cout<<"3) Exit from this menu"<<endl;
+			cout<<"Choise from(1-3)"<<endl;
+			cin>>q;
+			if(q==1)
+			{ 
+			cout<<"1.WHEN COMPUTER WAS FIRST INVENTIONED?";
+			cout<<"\n1)1822 \n2)1823 \n3)1834 \n4)1922"<<endl;
+			cout<<"Your answer is: ";
+			ans[0]=3;
+			cin>>answer[0];
+			if(answer[0]==3)
+			{
+				cout<<"contratulation your answer is right"<<endl;
+				score=scre+4;
+					
+			}
+			else
+			{
+				cout<<"your answer is wrong! right answer is : 1834"<<endl;
+			}
+			cout<<"\n2.WHAT IS OUR NATIONAL GAME?"<<endl;
+			cout<<"\n1)cricket \n2football \n3)hockey \n4)badminton"<<endl;
+			cin>>answer[1];
+			ans[1]=3;
+			if(answer[1]==3)
+			{
+				cout<<"contratulation your answer is right"<<endl;
+			     score=scre+4;
+			}
+			else
+			{
+				cout<<"your answer is wrong! right answer is : Hockey"<<endl;
+			}	
+			cout<<"\n3. Which of the following correctly declares an array?"<<endl;
+			cout<<"\n1) int array[10] \n2) int array \n3) array{10} \n4) array array[10]"<<endl;
+			cin>>answer[2];
+			ans[2]=1;
+			if(answer[2]==1)
+			{
+				cout<<"contratulation your answer is right"<<endl;
+			     score=scre+4;
+				
+			}
+			else
+			{
+				cout<<"your answer is wrong! right answer is : int array[10]"<<endl;
+			}						
+			cout<<"\n4. What is the index number of the last element of an array with 9 elements?"<<endl;
+			cout<<"\n1):9 \n2):8 \n3):0 \n4):Programmer-defined"<<endl;
+			cin>>answer[3];
+			ans[3]=2;
+			if(answer[3]==2)
+			{
+				cout<<"contratulation your answer is right"<<endl;
+			     score=scre+4;
+			}
+			else
+			{
+				cout<<"your answer is wrong! right answer is : 8"<<endl;
+			}						
+			cout<<"\n5.Which keyword is used to represent a friend function?"<<endl;
+			cout<<"\n1):friend \n2):Friend \n3):friend_function \n4):Friend_func"<<endl;
+			cin>>answer[4];
+			ans[4]=3;
+			if(answer[4]==1)
+			{
+				cout<<"contratulation your answer is right"<<endl;
+				score=scre+4;
+			}
+			else
+			{
+				cout<<"your answer is wrong! right answer is : friend"<<endl;
+			}
+			cout<<name<<" Your total score is :"<<score<<endl;	
+		}
+		if(q==2)
+		{
+			cout<<"correct answer is\n";
+			cout<<"question 1:answer=\n"<<ans[0];
+			cout<<"question 2:answer=\n"<<ans[1];
+			cout<<"question 3:answer=\n"<<ans[2];	
+		}	 
+	}
+else
+{
+exit(0);
+}
+}
+int main()
+{
+  	char p[10];	
+  	cout<<"\n\n\n\tINTERNSHALA Quiz Game PROJECT";
+	cout<<"\n\t=========================================";
+	cout<<"\n\n\n\tMADE BY : ANUJ KUMAR GAUR";
+	cout<<"\n\tUNIVERSITY :LOVELY PROFESSIONAL UNIVERSITY \n\t\tJALANDAR\n\n";
+  	cout<<"Enter password:\n";
+  	gets(p);
+  	system("cls");
+  	if(!strcmp(p,"ANUJ"))
+  	{
+  		menu();
+	  }
+	  else
+	  {
+	  	system("cls");
+	  	cout<<"wrong password!try again\n";
+	  	main();
+	  }
+}
+int menu()
+{
+	Controller obj;
+	int pick;
+	system("cls");
+	cout<<"Enter main menu:\n\n";
+	cout<<"Enter 1:Administer Quiz\n\n";
+	cout<<"Enter 2.Attend the Quiz\n\n";
+	cout<<"PRESS 3:exit\n\n";
+	cout<<"enter pick(1-3)\n\n";
+	cin>>pick;
+	switch (pick)
+	{
+	
+	case 1:
+		system ("cls");
+		obj.menuController();
+		getch();
+		break;
+		
+			
+			    case 3:
+			    	system("cls");
+					exit(0);
+					getch();
+					menu();
+			default :
+			cout<<"\aplease enter a valid case";
+			
+}
+}
